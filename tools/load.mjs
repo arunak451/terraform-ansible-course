@@ -4,8 +4,9 @@ export const COURSE = "iac";
 export const courseDir = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..", "public");
 export function load() {
   const ctx = { window: {} }; vm.createContext(ctx);
-  for (const f of ["lessons.js", "extras.js", "mock.js"]) vm.runInContext(fs.readFileSync(path.join(courseDir, f), "utf8"), ctx, { filename: f });
+  for (const f of ["lessons.js", "extras.js", "levelup.js", "mock.js"]) vm.runInContext(fs.readFileSync(path.join(courseDir, f), "utf8"), ctx, { filename: f });
   const B=(a,b)=>({k:"big",a,b}),T=(...l)=>({k:"term",l}),Li=(a,...r)=>({k:"list",a,r}),Y=(f,...r)=>({k:"yaml",f,r});
-  const X = ctx.window.EXTRAS({ B, T, Li, Y });
-  return { lessons: [...ctx.window.CORE({ B, T, Li, Y }), ...X.interview], X, mock: ctx.window.MOCK };
+  const X = ctx.window.EXTRAS({ B, T, Li, Y }), LV = ctx.window.LVL({ B, T, Li, Y });
+  X.practice.push(...LV.practice); X.quiz.push(...LV.quiz);
+  return { lessons: [...ctx.window.CORE({ B, T, Li, Y }), ...X.interview, ...LV.lessons], X, mock: ctx.window.MOCK };
 }

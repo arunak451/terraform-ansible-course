@@ -5,8 +5,9 @@ An Infrastructure as Code course for DevOps beginners. Malli Akka, an animated t
 - **12 Terraform lessons:** IaC basics, AWS setup, init/plan/apply, HCL + EC2, variables/outputs/locals, state & S3 backend, data sources & lifecycle, VPC networking, count/for_each, modules, workspaces/import/drift, CI/CD
 - **6 Ansible lessons:** inventory & ad-hoc, playbooks & idempotency, variables/templates/handlers, roles & Galaxy, Vault & best practices, plus a Terraform + Ansible project
 - **6 interview lessons:** Terraform vs Ansible, state problems, drift, failed applies, Ansible debugging, common questions
+- **6 Level Up lessons:** provider aliases (multi-region/account), terraform test + policy as code, Terragrunt, Ansible dynamic inventory, rolling updates (serial, delegate_to), AWX + Molecule
 - Each lesson: 8 scenes; the board shows big text, lists, a fake terminal, and HCL/YAML explained line by line
-- Practice terminal (4 simulated tasks per lesson), 5-question quiz, searchable cheat sheet, a 15-step project guide and a 29-question mock interview
+- Practice terminal (4 simulated tasks per lesson), 5-question quiz, searchable cheat sheet, a 15-step project guide and a 34-question mock interview
 - Progress is saved in localStorage; the layout works on mobile
 
 ## Layout
@@ -17,6 +18,7 @@ public/            ← the only folder Vercel serves (vercel.json → outputDire
   lessons.js       18 core lessons  [subtitle, board]
   extras.js        interview lessons, practice tasks, quizzes
   project.js       project guide steps
+  levelup.js       Level Up lessons with their practice & quiz
   mock.js          mock interview questions
   durations.js     lesson lengths (generated)
   audio/           {lesson}-{scene}.mp3, mq-N.mp3, fx-*.mp3 (generated)
