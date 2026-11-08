@@ -334,7 +334,7 @@ aside h2 small{font:600 .8rem var(--body);color:var(--muted)}
           <button class="btn" id="mute">🔊 Sound on</button>
         </div>
       </div>
-      <p class="note" id="vnote">Malli Akka voice: Kavitha, Sarvam AI la create panna natural Tamil voice. Headphones potta innum nalla irukkum.</p>
+      <p class="note" id="vnote">Malli Akka voice: Fish Audio la create panna natural Tamil voice. Headphones potta innum nalla irukkum.</p>
 
       <section class="lab" id="lab">
         <div class="tabs" role="tablist">
@@ -533,7 +533,7 @@ function loadVoices(){
   voices=all.filter(v=>/^(en|ta)/i.test(v.lang)).sort((a,b)=>score(b)-score(a));
   const saved=store.get("iac-voice","kavitha");
   const idx=voices.findIndex(v=>v.name===saved);
-  $("voice").innerHTML=`<option value="kavitha">Kavitha (natural Tamil)</option>`+
+  $("voice").innerHTML=`<option value="kavitha">Malli Akka (natural Tamil)</option>`+
     voices.map((v,i)=>`<option value="${i}">Browser: ${esc(v.name.replace(/^Microsoft |Online \(Natural\) - /g,""))} (${v.lang})</option>`).join("");
   natural=idx<0; voice=natural?null:voices[idx];
   $("voice").value=natural?"kavitha":String(idx);
